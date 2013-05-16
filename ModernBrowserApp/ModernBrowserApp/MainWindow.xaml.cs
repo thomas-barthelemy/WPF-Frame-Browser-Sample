@@ -89,13 +89,13 @@ namespace ModernBrowserApp
             // Getting text from text box
             var inputText = TxbAddressBar.Text;
 
-            // Checking if protocol is missing (Default to HTTP)
-            if (!inputText.StartsWith("http", StringComparison.OrdinalIgnoreCase))
-                inputText = "http://" + inputText;
+            // Building the corresponding URI
+            var uriBuilder = new UriBuilder(inputText);
 
             // Setting the frame new source
-            MainFrame.Navigate(new Uri(inputText));
+            MainFrame.Navigate(uriBuilder.Uri);
 
+            
         }
         #endregion
 
