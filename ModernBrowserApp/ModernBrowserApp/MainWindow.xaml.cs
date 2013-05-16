@@ -94,8 +94,6 @@ namespace ModernBrowserApp
 
             // Setting the frame new source
             MainFrame.Navigate(uriBuilder.Uri);
-
-            
         }
         #endregion
 
